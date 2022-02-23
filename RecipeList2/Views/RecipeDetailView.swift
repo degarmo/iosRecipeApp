@@ -20,13 +20,12 @@ struct RecipeDetailView: View {
                     .resizable()
                     .scaledToFit()
                 VStack(alignment: .leading){
-                    // Mark: Recipe Ingredients
                     Text("Ingredients").font(.headline).padding(.bottom, 5)
-                    // Mark: ForEach Ingredients
-                    ForEach (recipe.ingredients, id:\.self){ r in
-                        Text(" • " + r).padding([.bottom, .top], 1)
+                
+                    ForEach (recipe.ingredients){ r in
+                        Text(" • " + r.name).padding([.bottom, .top], 1)
                     }
-                    // Mark: Divider
+                    // Mark: Divide
                     Divider()
                 VStack(alignment: .leading) {
                     // Mark: Recipe Directions
